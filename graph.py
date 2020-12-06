@@ -20,4 +20,11 @@ class Graph:
         if vertex in self.data:
             return
         self.data[vertex]=[]
+    def remove_vertex(self,vertex):
+        pass
+    def add_edge(self, A, B):
+        pass
+    def remove_edge(self, A, B):
+        pass
+    
         

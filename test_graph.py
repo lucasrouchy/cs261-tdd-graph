@@ -56,52 +56,52 @@ class TestGraph(unittest.TestCase):
         g.add_vertex('A')
         self.assertEqual([], g.data['A'])
 
-    # def test_remove_vertex_nonexistent(self):
-    #     """
-    #     When removing a vertex that does not exist, nothing happens.
-    #     Hint: Just pass for now.
-    #     """
-    #     g = Graph()
-    #     try:
-    #         g.remove_vertex('A')
-    #     except KeyError:
-    #         self.fail('Removing a key raised an error.')
-    #     self.assertEqual({}, g.data)
+    def test_remove_vertex_nonexistent(self):
+        """
+        When removing a vertex that does not exist, nothing happens.
+        Hint: Just pass for now.
+        """
+        g = Graph()
+        try:
+            g.remove_vertex('A')
+        except KeyError:
+            self.fail('Removing a key raised an error.')
+        self.assertEqual({}, g.data)
 
-    # def test_add_edge_nonexistent(self):
-    #     """
-    #     Adding an edge between two vertices that do not exist does nothing.
-    #     Hint: Just pass for now.
-    #     """
-    #     g = Graph()
-    #     try:
-    #         g.add_edge('A', 'B')
-    #     except KeyError:
-    #         self.fail("Adding invalid edge raised a KeyError")
+    def test_add_edge_nonexistent(self):
+        """
+        Adding an edge between two vertices that do not exist does nothing.
+        Hint: Just pass for now.
+        """
+        g = Graph()
+        try:
+            g.add_edge('A', 'B')
+        except KeyError:
+            self.fail("Adding invalid edge raised a KeyError")
 
-    # def test_remove_edge_nonexistent(self):
-    #     """
-    #     Removing an edge that does not exist does nothing.
-    #     Hint: Just pass for now.
-    #     """
-    #     g = Graph()
-    #     try:
-    #         g.remove_edge('A', 'B')
-    #     except KeyError:
-    #         self.fail("Removing nonexistent edge raised a KeyError")
+    def test_remove_edge_nonexistent(self):
+        """
+        Removing an edge that does not exist does nothing.
+        Hint: Just pass for now.
+        """
+        g = Graph()
+        try:
+            g.remove_edge('A', 'B')
+        except KeyError:
+            self.fail("Removing nonexistent edge raised a KeyError")
 
     """
     Single-vertex graph.
     """
 
-    # def test_adjacent_one(self):
-    #     """
-    #     A graph with one vertex has no neighbors, so adjacent returns false.
-    #     """
-    #     g = Graph()
-    #     g.data['A'] = []
-    #     self.assertFalse(g.adjacent('A', 'B'))
-    #     self.assertFalse(g.adjacent('A', 'FAKE'))
+    def test_adjacent_one(self):
+        """
+        A graph with one vertex has no neighbors, so adjacent returns false.
+        """
+        g = Graph()
+        g.data['A'] = []
+        self.assertFalse(g.adjacent('A', 'B'))
+        self.assertFalse(g.adjacent('A', 'FAKE'))
 
     # def test_neighbors_one(self):
     #     """
