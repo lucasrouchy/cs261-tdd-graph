@@ -54,6 +54,11 @@ class Graph:
         return A in self.data[B] and B in self.data
     def v(self):
         return len(self.data)
+    def e(self):
+        sum=0
+        for vertex in self.data:
+            sum += len(self.data[vertex])
+        return sum // 2
         
 
 
