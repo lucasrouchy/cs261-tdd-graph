@@ -15,7 +15,7 @@ class Graph:
             return False
         if B in self.data[A]:
             return True
-            
+
         
     def neighbors(self, vertex):
         if vertex in self.data:
@@ -32,10 +32,15 @@ class Graph:
 
     def remove_vertex(self,vertex):
         if vertex in self.data:
+            self._remove_vertex(vertex)
             self.data.pop(vertex)
     def add_edge(self, A, B):
         pass
     def remove_edge(self, A, B):
         pass
-    
+    def _remove_vertex(self, vertex):
+        for neighbor in self.neighbors(vertex):
+            if vertex in self.neighbors(neighbor):
+                self.neighbors(neighbor).remove(vertex)
         
+
