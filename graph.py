@@ -5,6 +5,7 @@
 # YOUR NAME
 
 import functools
+from operator import le
 
 class Graph:
     def __init__(self):
@@ -42,7 +43,7 @@ class Graph:
        if self._vertices(A,B) and self._neighbor(A,B):
            self.data[A].remove(B)
            self.data[B].remove(A)
-           
+
     def _remove_vertex(self, vertex):
         for neighbor in self.neighbors(vertex):
             if vertex in self.neighbors(neighbor):
@@ -51,5 +52,8 @@ class Graph:
         return A in self.data and B in self.data
     def _neighbor(self, A, B):
         return A in self.data[B] and B in self.data
+    def v(self):
+        return len(self.data)
+        
 
 
