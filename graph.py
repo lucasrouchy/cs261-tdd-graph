@@ -42,5 +42,9 @@ class Graph:
         for neighbor in self.neighbors(vertex):
             if vertex in self.neighbors(neighbor):
                 self.neighbors(neighbor).remove(vertex)
+    def _vertices(self, A, B):
+        return A in self.data and B in self.data
+    def _neighbor(self, A, B):
+        return A in self.data[B] and B in self.data
         
 
