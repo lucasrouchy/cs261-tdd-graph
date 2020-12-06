@@ -9,7 +9,7 @@ import functools
 class Graph:
     def __init__(self):
         self.data = dict()
-        
-
-    
-
+   
+    def adjacent(self, A, B):
+        if len(self.data) <=1:
+            return False
