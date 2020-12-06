@@ -35,7 +35,9 @@ class Graph:
             self._remove_vertex(vertex)
             self.data.pop(vertex)
     def add_edge(self, A, B):
-        pass
+        if self._vertices(A,B) and not self._neighbor(A,B):
+            self.data[B].append(A)
+            self.data[A].append(B)
     def remove_edge(self, A, B):
         pass
     def _remove_vertex(self, vertex):
@@ -46,5 +48,5 @@ class Graph:
         return A in self.data and B in self.data
     def _neighbor(self, A, B):
         return A in self.data[B] and B in self.data
-        
+
 
