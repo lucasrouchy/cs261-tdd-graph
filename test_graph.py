@@ -222,34 +222,34 @@ class TestGraph(unittest.TestCase):
         self.assertEqual(['B'], g.data['A'])
         self.assertEqual(['A'], g.data['B'])
 
-    # def test_add_edge_existing_two(self):
-    #     """
-    #     Adding an edge to vertices that already share and edge does not create a
-    #     second edge.
-    #     """
-    #     g = Graph()
-    #     g.data['A'] = ['B']
-    #     g.data['B'] = ['A']
-    #     g.add_edge('A', 'B')
-    #     self.assertEqual(['B'], g.data['A'])
-    #     self.assertEqual(['A'], g.data['B'])
+    def test_add_edge_existing_two(self):
+        """
+        Adding an edge to vertices that already share and edge does not create a
+        second edge.
+        """
+        g = Graph()
+        g.data['A'] = ['B']
+        g.data['B'] = ['A']
+        g.add_edge('A', 'B')
+        self.assertEqual(['B'], g.data['A'])
+        self.assertEqual(['A'], g.data['B'])
 
-    # def test_remove_edge_two(self):
-    #     """
-    #     Removing an edge between two vertices removes each vertex from both
-    #     neighbors lists.
-    #     """
-    #     g = Graph()
-    #     g.data['A'] = ['B']
-    #     g.data['B'] = ['A']
-    #     g.remove_edge('A', 'B')
-    #     self.assertEqual([], g.data['A'])
-    #     self.assertEqual([], g.data['B'])
-    #     g.data['A'] = ['B']
-    #     g.data['B'] = ['A']
-    #     g.remove_edge('B', 'A')
-    #     self.assertEqual([], g.data['A'])
-    #     self.assertEqual([], g.data['B'])
+    def test_remove_edge_two(self):
+        """
+        Removing an edge between two vertices removes each vertex from both
+        neighbors lists.
+        """
+        g = Graph()
+        g.data['A'] = ['B']
+        g.data['B'] = ['A']
+        g.remove_edge('A', 'B')
+        self.assertEqual([], g.data['A'])
+        self.assertEqual([], g.data['B'])
+        g.data['A'] = ['B']
+        g.data['B'] = ['A']
+        g.remove_edge('B', 'A')
+        self.assertEqual([], g.data['A'])
+        self.assertEqual([], g.data['B'])
 
     # def test_remove_edge_nonexisting_two(self):
     #     """

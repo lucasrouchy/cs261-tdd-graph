@@ -39,7 +39,10 @@ class Graph:
             self.data[B].append(A)
             self.data[A].append(B)
     def remove_edge(self, A, B):
-        pass
+       if self._vertices(A,B) and self._neighbor(A,B):
+           self.data[A].remove(B)
+           self.data[B].remove(A)
+           
     def _remove_vertex(self, vertex):
         for neighbor in self.neighbors(vertex):
             if vertex in self.neighbors(neighbor):
