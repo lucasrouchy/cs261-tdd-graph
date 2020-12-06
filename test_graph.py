@@ -143,45 +143,45 @@ class TestGraph(unittest.TestCase):
         g.remove_vertex('A')
         self.assertRaises(KeyError, operator.itemgetter('A'), g.data)
 
-    # def test_add_edge_one(self):
-    #     """
-    #     Adding an edge between an existing vertex and one that does not exist
-    #     does nothing.
-    #     """
-    #     g = Graph()
-    #     g.data['A'] = []
-    #     try:
-    #         g.add_edge('A', 'B')
-    #     except KeyError:
-    #         self.fail("Adding invalid edge raised a KeyError")
+    def test_add_edge_one(self):
+        """
+        Adding an edge between an existing vertex and one that does not exist
+        does nothing.
+        """
+        g = Graph()
+        g.data['A'] = []
+        try:
+            g.add_edge('A', 'B')
+        except KeyError:
+            self.fail("Adding invalid edge raised a KeyError")
 
-    # def test_remove_edge_one(self):
-    #     """
-    #     Removing an edge that does not exist does nothing.
-    #     """
-    #     g = Graph()
-    #     g.data['A'] = []
-    #     try:
-    #         g.remove_edge('A', 'B')
-    #     except KeyError:
-    #         self.fail("Removing nonexistent edge raised a KeyError")
+    def test_remove_edge_one(self):
+        """
+        Removing an edge that does not exist does nothing.
+        """
+        g = Graph()
+        g.data['A'] = []
+        try:
+            g.remove_edge('A', 'B')
+        except KeyError:
+            self.fail("Removing nonexistent edge raised a KeyError")
 
     """
     Graphs with two vertices.
     """
 
-    # def test_adjacent_two(self):
-    #     """
-    #     A vertex, v2, is a neighbor of v1 when v2 is present in v1's list of neighbors.
-    #     Note: Neighbors should indeed be present in each others' list of neighbors,
-    #     but this isn't the job of the `adjacent` method.
-    #     """
-    #     g = Graph()
-    #     g.data['A'] = ['B']
-    #     g.data['B'] = []  # Intentionally minimal. See the Note above.
-    #     self.assertTrue(g.adjacent('A', 'B'))
-    #     self.assertFalse(g.adjacent('A', 'FAKE'))
-    #     self.assertFalse(g.adjacent('B', 'A'))
+    def test_adjacent_two(self):
+        """
+        A vertex, v2, is a neighbor of v1 when v2 is present in v1's list of neighbors.
+        Note: Neighbors should indeed be present in each others' list of neighbors,
+        but this isn't the job of the `adjacent` method.
+        """
+        g = Graph()
+        g.data['A'] = ['B']
+        g.data['B'] = []  # Intentionally minimal. See the Note above.
+        self.assertTrue(g.adjacent('A', 'B'))
+        self.assertFalse(g.adjacent('A', 'FAKE'))
+        self.assertFalse(g.adjacent('B', 'A'))
 
     # def test_neighbors_two(self):
     #     """

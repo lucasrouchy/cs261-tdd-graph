@@ -13,6 +13,9 @@ class Graph:
     def adjacent(self, A, B):
         if len(self.data) <=1:
             return False
+        if B in self.data[A]:
+            return True
+            
         
     def neighbors(self, vertex):
         if vertex in self.data:
