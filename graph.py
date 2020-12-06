@@ -16,4 +16,8 @@ class Graph:
         
     def neighbors(self, vertex):
         return []
+    def add_vertex(self, vertex):
+        if vertex in self.data:
+            return
+        self.data[vertex]=[]
         
