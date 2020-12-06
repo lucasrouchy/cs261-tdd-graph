@@ -7,6 +7,9 @@
 import functools
 
 class Graph:
+    def __init__(self):
+        self.data = dict()
+        
 
-    pass
+    
 
