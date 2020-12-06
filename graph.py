@@ -22,6 +22,11 @@ class Graph:
         if vertex in self.data:
             return
         self.data[vertex]=[]
+        try:
+            test = self.data[vertex]
+        except KeyError:
+            self.data[vertex] = []
+
     def remove_vertex(self,vertex):
         pass
     def add_edge(self, A, B):
