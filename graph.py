@@ -28,7 +28,8 @@ class Graph:
             self.data[vertex] = []
 
     def remove_vertex(self,vertex):
-        pass
+        if vertex in self.data:
+            self.data.pop(vertex)
     def add_edge(self, A, B):
         pass
     def remove_edge(self, A, B):
